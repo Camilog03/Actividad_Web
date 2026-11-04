@@ -206,6 +206,35 @@ h2, h3, h4, h5, h6, p, li, ul, ol, input, textarea, label, button {
   display: block;
 }
 
+/* --- Wireframes: galería tipo Drive --- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.wf-card {
+  margin: 0;
+  background-color: var(--tarjeta-fondo);
+  color: var(--tarjeta-texto);
+  border-radius: 12px;
+  border-top: 4px solid var(--univalle-red);
+  overflow: hidden;
+}
+
+.wf-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.wf-card figcaption {
+  padding: .75rem 1rem;
+  font-weight: 700;
+}
+
+
 /* --- Objetivos --- */
 .hero-objetivos {
   background-color: var(--nav-fondo);
