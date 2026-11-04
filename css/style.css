@@ -105,6 +105,41 @@ body {
   color: var(--footer-franja-texto);
 }
 
+
+/* ============================================
+   TIPOGRAFÍA
+   ============================================ */
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.urbanist-regular {
+  font-family: "Urbanist", sans-serif;
+   font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, a, .titulo-unimetas, .titulo-seccion, .footer-unimetas, .footer-copyright { 
+  font-family: "Bebas Neue", 
+  sans-serif; 
+  font-weight: 400; 
+  font-style: normal;
+}
+
+h2, h3, h4, h5, h6, p, li, ul, ol, input, textarea, label, button {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+
+
 /* ============================================
    LOGO
    ============================================ */
@@ -170,6 +205,35 @@ body {
   margin: 1rem auto .5rem;
   display: block;
 }
+
+/* --- Wireframes: galería tipo Drive --- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.wf-card {
+  margin: 0;
+  background-color: var(--tarjeta-fondo);
+  color: var(--tarjeta-texto);
+  border-radius: 12px;
+  border-top: 4px solid var(--univalle-red);
+  overflow: hidden;
+}
+
+.wf-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.wf-card figcaption {
+  padding: .75rem 1rem;
+  font-weight: 700;
+}
+
 
 /* --- Objetivos --- */
 .hero-objetivos {
@@ -311,3 +375,4 @@ body.fondo-alterno { background-color: var(--thistle); }
   .encabezado-pagina h1,
   .hero-objetivos h1 { font-size: 2rem; }
 }
+
