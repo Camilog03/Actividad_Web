@@ -1,0 +1,313 @@
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.icon-block {
+  width: 100%;
+}
+
+/* ============================================
+   PALETA BASE 
+   ============================================ */
+:root {
+  --lavender-blush: #F5E6E8;
+  --thistle: #D5C6E0;
+  --lilac-ash: #AAA1C8;
+  --dusty-mauve: #967AA1;
+  --space-indigo: #192A51;
+
+  /* Rojo de acento (cámbialo por el rojo oficial de Univalle si lo tienes) */
+  --univalle-red: #C8102E;
+  --univalle-red-dark: #9E0C24;
+
+  /* Roles de color: TEMA CLARO (por defecto) */
+  --fondo: var(--lavender-blush);
+  --texto: var(--space-indigo);
+  --texto-suave: var(--dusty-mauve);
+  --titulo: var(--space-indigo);
+  --nav-fondo: var(--space-indigo);
+  --tarjeta-fondo: var(--thistle);
+  --tarjeta-texto: var(--space-indigo);
+  --boton-fondo: var(--univalle-red);
+  --boton-hover: var(--univalle-red-dark);
+  --icono: var(--dusty-mauve);
+  --footer-fondo: var(--dusty-mauve);
+  --footer-franja: var(--space-indigo);
+  --footer-franja-texto: var(--thistle);
+  --logo-fondo: transparent;
+}
+
+/* ============================================
+   TEMA OSCURO (se activa solo si el dispositivo
+   del usuario está en modo oscuro)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #101a33;
+    --texto: var(--lavender-blush);
+    --texto-suave: var(--thistle);
+    --titulo: var(--lavender-blush);
+    --nav-fondo: var(--space-indigo);
+    --tarjeta-fondo: var(--lilac-ash);
+    --tarjeta-texto: var(--space-indigo);
+    --boton-fondo: var(--univalle-red);
+    --boton-hover: var(--univalle-red-dark);
+    --icono: var(--space-indigo);
+    --footer-fondo: var(--space-indigo);
+    --footer-franja: #0a1226;
+    --footer-franja-texto: var(--thistle);
+    --logo-fondo: var(--lavender-blush);  /* placa clara para que el logo negro se vea */
+  }
+}
+
+/* ============================================
+   ESTILOS 
+   ============================================ */
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+}
+
+.nav-unimetas {
+  background-color: var(--nav-fondo);
+  border-bottom: 4px solid var(--univalle-red);
+}
+
+.titulo-unimetas {
+  color: var(--titulo);
+}
+
+.texto-unimetas {
+  color: var(--texto-suave);
+}
+
+.btn-unimetas {
+  background-color: var(--boton-fondo);
+}
+.btn-unimetas:hover,
+.btn-unimetas:focus {
+  background-color: var(--boton-hover);
+}
+
+.icono-unimetas {
+  color: var(--icono);
+}
+
+.footer-unimetas {
+  background-color: var(--footer-fondo);
+}
+.footer-unimetas .footer-copyright {
+  background-color: var(--footer-franja);
+  color: var(--footer-franja-texto);
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+.logo-unimetas {
+  background-color: var(--logo-fondo);
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 300px;
+  width: 100%;
+}
+
+/* Fila del logo: menos espacio arriba y abajo */
+.fila-logo {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* ============================================
+   TARJETAS
+   ============================================ */
+.icon-block {
+  background-color: var(--tarjeta-fondo);
+  color: var(--tarjeta-texto);
+  border-radius: 12px;
+  border-top: 4px solid var(--univalle-red);
+  padding: 20px;
+  width: 100%;
+}
+
+.row-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-tarjetas::after {
+  display: none;
+}
+
+.row-tarjetas .col {
+  display: flex;
+}
+/* ============================================
+   PÁGINAS INTERNAS (nosotros, objetivos, avances, contacto)
+   Solo usan las variables de arriba: nada de colores sueltos
+   ============================================ */
+.encabezado-pagina {
+  padding: 2.5rem 0 1rem;
+}
+.encabezado-pagina h1 {
+  font-size: 2.6rem;
+  margin: 0 0 .5rem;
+}
+.pagina-contenido h4,
+.pagina-contenido h5 { color: var(--titulo); }
+.icon-block h5 { color: var(--tarjeta-texto); }
+
+/* --- Nosotros --- */
+.foto-integrante {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 4px solid var(--univalle-red);
+  margin: 1rem auto .5rem;
+  display: block;
+}
+
+/* --- Objetivos --- */
+.hero-objetivos {
+  background-color: var(--nav-fondo);
+  color: var(--lavender-blush);
+  border-bottom: 4px solid var(--univalle-red);
+  padding: 2.5rem 0 2rem;
+  margin-bottom: 1.5rem;
+}
+.hero-objetivos h1 { font-size: 2.6rem; margin: 0 0 .5rem; }
+.titulo-seccion { font-size: 1.9rem; margin: 1.5rem 0 1rem; }
+.card-general {
+  background-color: var(--tarjeta-fondo);
+  color: var(--tarjeta-texto);
+  border-top: 4px solid var(--univalle-red);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.icono-lateral {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  background-color: var(--nav-fondo);
+}
+.icono-lateral .material-icons { font-size: 3rem; color: var(--lavender-blush); }
+.encabezado-especificos { display: flex; align-items: center; flex-wrap: wrap; }
+.encabezado-especificos .titulo-seccion { margin: 0; }
+.collapsible { border: none; box-shadow: none; }
+.collapsible-header {
+  background-color: var(--tarjeta-fondo);
+  color: var(--tarjeta-texto);
+  font-weight: 500;
+}
+.collapsible-body {
+  background-color: var(--tarjeta-fondo);
+  color: var(--tarjeta-texto);
+  border-bottom: none;
+}
+.collapsible-header .material-icons { color: var(--icono); }
+
+/* --- Avances --- */
+.filtro {
+  color: var(--texto);
+  margin: 0 .35rem .75rem 0;
+}
+.filtro:hover { background-color: var(--tarjeta-fondo); }
+.btn-flat.filtro.activo {
+  background-color: var(--boton-fondo);
+  color: #fff;
+}
+.avances-grid { display: flex; flex-wrap: wrap; }
+.avances-grid::after { display: none; }
+.avance-col { display: flex; margin-bottom: 1rem; margin-left: 0 !important; } /* Materialize centra con margin-left:auto y deja huecos al filtrar */
+.icon-block.avance {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.avance-cuerpo { flex: 1; }
+.estado {
+  display: inline-block;
+  font-size: .8rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 12px;
+  margin-bottom: .5rem;
+  border: 2px solid var(--tarjeta-texto);
+  color: var(--tarjeta-texto);
+}
+.estado.listo { background-color: var(--tarjeta-texto); color: var(--tarjeta-fondo); }
+.estado.proceso { border-style: solid; }
+.estado.pendiente { border-style: dashed; }
+.progress { background-color: var(--lavender-blush); }
+.progress .determinate { background-color: var(--univalle-red); }
+.detalle { display: none; margin-top: .75rem; }
+.detalle.visible { display: block; }
+.btn-detalle {
+  background: none;
+  border: none;
+  padding: .5rem 0 0;
+  text-align: left;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--tarjeta-texto);
+  text-decoration: underline;
+  font-size: 1rem;
+}
+body.fondo-alterno { background-color: var(--thistle); }
+.collection {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.collection .collection-item {
+  background-color: var(--tarjeta-fondo);
+  color: var(--tarjeta-texto);
+  border-bottom: 1px solid var(--fondo);
+}
+.collection .collection-item.avatar i.circle { background-color: var(--univalle-red); color: #fff; }
+.collection .collection-item.avatar .title { font-weight: 700; }
+
+/* --- Contacto --- */
+.input-field input,
+.input-field textarea { color: var(--tarjeta-texto); }
+.input-field label,
+.input-field .prefix { color: var(--tarjeta-texto); opacity: .8; }
+.input-field input:focus,
+.input-field textarea:focus {
+  border-bottom: 1px solid var(--univalle-red) !important;
+  box-shadow: 0 1px 0 0 var(--univalle-red) !important;
+}
+.input-field input:focus + label,
+.input-field textarea:focus + label,
+.input-field .prefix.active { color: var(--tarjeta-texto) !important; opacity: 1; }
+.error-msg {
+  /* el rojo no va como texto sobre fondos oscuros: se marca con una barra roja */
+  font-size: .85rem;
+  min-height: 1rem;
+  margin: -.5rem 0 .75rem;
+  padding-left: 8px;
+  border-left: 3px solid transparent;
+}
+.error-msg:not(:empty) { border-left-color: var(--univalle-red); font-weight: 700; }
+.lista-contacto li { display: flex; align-items: center; margin-bottom: 1rem; }
+.lista-contacto .material-icons { margin-right: .75rem; color: var(--icono); }
+
+/* Modal y avisos */
+.modal { background-color: var(--tarjeta-fondo); color: var(--tarjeta-texto); border-radius: 12px; }
+.modal .modal-footer { background-color: var(--tarjeta-fondo); }
+.modal .modal-footer .btn-flat { color: var(--tarjeta-texto); font-weight: 700; }
+.toast-unimetas { background-color: var(--nav-fondo); color: var(--lavender-blush); }
+.toast-error { background-color: var(--univalle-red-dark); color: #fff; }
+.material-tooltip { background-color: var(--nav-fondo); color: var(--lavender-blush); }
+
+@media (max-width: 600px) {
+  #btn-color { float: none !important; display: block; width: 100%; margin-top: .5rem; }
+  .avance-col { display: block; }
+  .encabezado-pagina h1,
+  .hero-objetivos h1 { font-size: 2rem; }
+}

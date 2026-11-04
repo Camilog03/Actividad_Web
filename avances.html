@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avances | UniMetas</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+  <nav class="nav-unimetas" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo">UniMetas</a>
+
+      <!-- Menú para pantallas medianas y grandes -->
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+        <li class="active"><a href="avances.html">Avances</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <!-- Menú lateral para móviles (Sidenav) -->
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+        <li class="active"><a href="avances.html">Avances</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <main class="pagina-contenido">
+    <header class="encabezado-pagina">
+      <div class="container center-align">
+        <h1 class="titulo-unimetas">Desarrollo y avances</h1>
+        <h5 class="light texto-unimetas">Así va el proyecto hasta hoy. Filtra por estado o abre cada avance para ver el detalle.</h5>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <!-- Filtros y botón de color -->
+      <div class="row">
+        <div class="col s12">
+          <button type="button" class="btn-flat filtro activo" data-estado="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="btn-flat filtro" data-estado="listo" aria-pressed="false">Completados</button>
+          <button type="button" class="btn-flat filtro" data-estado="proceso" aria-pressed="false">En proceso</button>
+          <button type="button" class="btn-flat filtro" data-estado="pendiente" aria-pressed="false">Pendientes</button>
+        </div>
+      </div>
+
+      <!-- Tarjetas de avances -->
+      <div class="row avances-grid">
+
+        <div class="col s12 m6 l4 avance-col" data-estado="listo">
+          <div class="icon-block avance">
+            <div class="avance-cuerpo">
+              <h5>Planteamiento del problema</h5>
+              <span class="estado listo">Completado</span>
+              <p>Definimos el problema y el alcance del proyecto.</p>
+              <div class="progress" role="progressbar" aria-label="Progreso: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><div class="determinate" style="width: 100%"></div></div>
+              <p class="detalle" id="det-1">Entrevistamos a la comunidad universitaria para ver cuáles eran sus mayores necesidades.</p>
+            </div>
+            <button type="button" class="btn-detalle" data-target="det-1" aria-expanded="false" aria-controls="det-1">Ver detalle</button>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4 avance-col" data-estado="listo">
+          <div class="icon-block avance">
+            <div class="avance-cuerpo">
+              <h5>Diseño del sitio web</h5>
+              <span class="estado listo">Completado</span>
+              <p>Estructura de páginas, paleta de colores y navegación.</p>
+              <div class="progress" role="progressbar" aria-label="Progreso: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><div class="determinate" style="width: 100%"></div></div>
+              <p class="detalle" id="det-2">Bocetos de las cinco páginas y definición de cómo se verá toda la app.</p>
+            </div>
+            <button type="button" class="btn-detalle" data-target="det-2" aria-expanded="false" aria-controls="det-2">Ver detalle</button>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4 avance-col" data-estado="proceso">
+          <div class="icon-block avance">
+            <div class="avance-cuerpo">
+              <h5>Desarrollo del prototipo</h5>
+              <span class="estado proceso">En proceso</span>
+              <p>Construcción de las funciones principales del sistema.</p>
+              <div class="progress" role="progressbar" aria-label="Progreso: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"><div class="determinate" style="width: 60%"></div></div>
+              <p class="detalle" id="det-3">Se termina el boceto interactivo que será la base para la app completada.</p>
+            </div>
+            <button type="button" class="btn-detalle" data-target="det-3" aria-expanded="false" aria-controls="det-3">Ver detalle</button>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4 avance-col" data-estado="proceso">
+          <div class="icon-block avance">
+            <div class="avance-cuerpo">
+              <h5>Documentación</h5>
+              <span class="estado proceso">En proceso</span>
+              <p>Informe técnico y manual de usuario.</p>
+              <div class="progress" role="progressbar" aria-label="Progreso: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"><div class="determinate" style="width: 35%"></div></div>
+              <p class="detalle" id="det-4">Se hace la documentación de todas las funcionalidades que tendrá la app y de lo que se planea implementar con ciertos permisos.</p>
+            </div>
+            <button type="button" class="btn-detalle" data-target="det-4" aria-expanded="false" aria-controls="det-4">Ver detalle</button>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4 avance-col" data-estado="pendiente">
+          <div class="icon-block avance">
+            <div class="avance-cuerpo">
+              <h5>Pruebas con usuarios</h5>
+              <span class="estado pendiente">Pendiente</span>
+              <p>Validación del prototipo con usuarios reales.</p>
+              <div class="progress" role="progressbar" aria-label="Progreso: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="determinate" style="width: 0%"></div></div>
+              <p class="detalle" id="det-5">Se abre una pequeña beta abierta para empezar a experimentar con la vida de un universitario real.</p>
+            </div>
+            <button type="button" class="btn-detalle" data-target="det-5" aria-expanded="false" aria-controls="det-5">Ver detalle</button>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4 avance-col" data-estado="pendiente">
+          <div class="icon-block avance">
+            <div class="avance-cuerpo">
+              <h5>Sustentación final</h5>
+              <span class="estado pendiente">Pendiente</span>
+              <p>Presentación de resultados del trabajo realizado.</p>
+              <div class="progress" role="progressbar" aria-label="Progreso: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"><div class="determinate" style="width: 0%"></div></div>
+              <p class="detalle" id="det-6">Preparar diapositivas y demo del sistema para socializarlo con la comunidad.</p>
+            </div>
+            <button type="button" class="btn-detalle" data-target="det-6" aria-expanded="false" aria-controls="det-6">Ver detalle</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bitácora -->
+      <h4 class="titulo-unimetas">Bitácora de actividades</h4>
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <i class="material-icons circle">event</i>
+          <span class="title">Fase 1</span>
+          <p>Conformación del equipo y elección del tema.</p>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle">edit</i>
+          <span class="title">Fase 2</span>
+          <p>Redacción de misión, visión y objetivos.</p>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle">web</i>
+          <span class="title">Fase 3</span>
+          <p>Diseño y maquetación del sitio web con Materialize.</p>
+        </li>
+        <li class="collection-item avatar">
+          <i class="material-icons circle">code</i>
+          <span class="title">Fase 4</span>
+          <p>Desarrollo del prototipo y primeras pruebas.</p>
+        </li>
+      </ul>
+
+    </div>
+  </main>
+
+  <footer class="page-footer footer-unimetas">
+    <div class="container">
+      <div class="row">
+
+        <div class="col l6 s12">
+          <h5 class="white-text">UniMetas</h5>
+          <p class="grey-text text-lighten-4">
+            Proyecto desarrollado por estudiantes de la Universidad del Valle Sede Tuluá,
+            para centralizar el material de estudio, la malla curricular y las reseñas de profesores.
+          </p>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Integrantes</h5>
+          <ul>
+            <li class="white-text">Paula Jimena Bohórquez B.</li>
+            <li class="white-text">Manuela Delgado A.</li>
+            <li class="white-text">Juan Camilo Gil A.</li>
+            <li class="white-text">Juan Manuel Mejía H.</li>
+          </ul>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Contacto</h5>
+          <ul>
+            <li><a class="white-text" href="mailto:unimetas@correounivalle.edu.co">unimetas@correounivalle.edu.co</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        © 2026 UniMetas · Universidad del Valle, Sede Tuluá
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

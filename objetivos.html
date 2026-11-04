@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetivos | Proyecto Integrador</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+  <!-- NAVBAR (componente 1) -->
+  <nav class="nav-unimetas" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo">UniMetas</a>
+
+      <!-- Menú para pantallas medianas y grandes -->
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li class="active"><a href="objetivos.html">Objetivos</a></li>
+        <li><a href="avances.html">Avances</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <!-- Menú lateral para móviles (Sidenav) -->
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li class="active"><a href="objetivos.html">Objetivos</a></li>
+        <li><a href="avances.html">Avances</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-objetivos">
+    <div class="container center-align">
+      <h1>Nuestros objetivos</h1>
+      <p class="flow-text">Hacia dónde va nuestra plataforma estudiantil</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- OBJETIVO GENERAL: card horizontal (componente 2) -->
+    <section class="section">
+      <h2 class="titulo-unimetas titulo-seccion">Objetivo general</h2>
+      <div class="card horizontal card-general">
+        <div class="card-image icono-lateral">
+          <i class="material-icons">flag</i>
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>Desarrollar una plataforma web para estudiantes universitarios que centralice el seguimiento de su progreso académico, la consulta de reseñas de profesores, el intercambio de materiales de estudio y la información de su matrícula, facilitando la toma de decisiones durante su carrera.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OBJETIVOS ESPECÍFICOS: collapsible (componente 3) -->
+    <section class="section">
+      <div class="row encabezado-especificos">
+        <div class="col s12 m6">
+          <h2 class="titulo-unimetas titulo-seccion">Objetivos específicos</h2>
+        </div>
+        <div class="col s12 m6 right-align">
+          <button class="btn waves-effect waves-light btn-unimetas" id="btn-expandir">
+            <i class="material-icons left">unfold_more</i>Expandir todos
+          </button>
+        </div>
+      </div>
+
+      <ul class="collapsible popout" id="lista-objetivos">
+        <li>
+          <div class="collapsible-header"><i class="material-icons icono-unimetas">account_tree</i>1. Seguimiento del progreso académico</div>
+          <div class="collapsible-body"><span>Permitir que cada estudiante visualice las materias de su programa, cuáles ha completado y cuáles desbloquea según los prerrequisitos.</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons icono-unimetas">star_rate</i>2. Calificación y reseñas de profesores</div>
+          <div class="collapsible-body"><span>Implementar un módulo donde se consulten los profesores de cada materia, y los estudiantes puedan calificarlos y escribir reseñas como guía para elegir con quién matricular.</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons icono-unimetas">folder_shared</i>3. Repositorio de materiales de estudio</div>
+          <div class="collapsible-body"><span>Crear un espacio para subir y buscar quices, parciales, talleres y proyectos organizados por materia, para facilitar el repaso.</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons icono-unimetas">event_note</i>4. Gestión de "Mis materias"</div>
+          <div class="collapsible-body"><span>Mostrar a cada estudiante, según su matrícula, el nombre y código de cada materia, el salón, el horario y el profesor.</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons icono-unimetas">devices</i>5. Interfaz intuitiva y responsiva</div>
+          <div class="collapsible-body"><span>Diseñar una interfaz clara, fácil de usar y adaptable a celulares y computadores, para que la plataforma se use en el día a día.</span></div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="page-footer footer-unimetas">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6">
+          <h5>UniMetas</h5>
+          <p>Proyecto Integrador I · Ingeniería de Sistemas</p>
+        </div>
+        <div class="col s12 m6">
+          <h5>Grupo</h5>
+          <ul>
+            <li>Paula Jimena Bohórquez B.</li>
+            <li>Manuela Delgado A.</li>
+            <li>Juan Camilo Gil A.</li>
+            <li>Juan Manuel Mejía H.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright"><div class="container">© 2026 Universidad del Valle, Sede Tuluá</div></div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

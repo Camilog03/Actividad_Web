@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | UniMetas</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+  <nav class="nav-unimetas" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo">UniMetas</a>
+
+      <!-- Menú para pantallas medianas y grandes -->
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+        <li><a href="avances.html">Avances</a></li>
+        <li class="active"><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <!-- Menú lateral para móviles (Sidenav) -->
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+        <li><a href="avances.html">Avances</a></li>
+        <li class="active"><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <main class="pagina-contenido">
+    <header class="encabezado-pagina">
+      <div class="container center-align">
+        <h1 class="titulo-unimetas">Contacto</h1>
+        <h5 class="light texto-unimetas">¿Tienes preguntas o sugerencias? Escríbenos.</h5>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row row-tarjetas">
+
+        <div class="col s12 m7">
+          <div class="icon-block">
+            <h5>Envíanos un mensaje</h5>
+            <form id="form-contacto" novalidate>
+              <div class="input-field">
+                <i class="material-icons prefix">person</i>
+                <input id="nombre" type="text" autocomplete="name" required>
+                <label for="nombre">Nombre</label>
+              </div>
+              <div class="error-msg" id="error-nombre"></div>
+
+              <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <input id="correo" type="email" autocomplete="email" required>
+                <label for="correo">Correo electrónico</label>
+              </div>
+              <div class="error-msg" id="error-correo"></div>
+
+              <div class="input-field">
+                <i class="material-icons prefix">message</i>
+                <textarea id="mensaje" class="materialize-textarea" required></textarea>
+                <label for="mensaje">Mensaje</label>
+              </div>
+              <div class="error-msg" id="error-mensaje"></div>
+
+              <button class="btn-large waves-effect waves-light btn-unimetas" type="submit">
+                Enviar mensaje<i class="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col s12 m5">
+          <div class="icon-block">
+            <h5>Datos de UniMetas</h5>
+            <ul class="lista-contacto">
+              <li><i class="material-icons">business</i>Equipo UniMetas</li>
+              <li><i class="material-icons">email</i>unimetas@correounivalle.edu.co</li>
+              <li><i class="material-icons">place</i>Tuluá, Valle del Cauca</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Confirmación de envío -->
+  <div id="modal-confirmacion" class="modal">
+    <div class="modal-content">
+      <h5>Mensaje enviado</h5>
+      <p>Gracias, <strong id="modal-nombre"></strong>. Recibimos tu mensaje y te responderemos pronto.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close btn-flat">Cerrar</a>
+    </div>
+  </div>
+
+  <footer class="page-footer footer-unimetas">
+    <div class="container">
+      <div class="row">
+
+        <div class="col l6 s12">
+          <h5 class="white-text">UniMetas</h5>
+          <p class="grey-text text-lighten-4">
+            Proyecto desarrollado por estudiantes de la Universidad del Valle Sede Tuluá,
+            para centralizar el material de estudio, la malla curricular y las reseñas de profesores.
+          </p>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Integrantes</h5>
+          <ul>
+            <li class="white-text">Paula Jimena Bohórquez B.</li>
+            <li class="white-text">Manuela Delgado A.</li>
+            <li class="white-text">Juan Camilo Gil A.</li>
+            <li class="white-text">Juan Manuel Mejía H.</li>
+          </ul>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Contacto</h5>
+          <ul>
+            <li><a class="white-text" href="mailto:unimetas@correounivalle.edu.co">unimetas@correounivalle.edu.co</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        © 2026 UniMetas · Universidad del Valle, Sede Tuluá
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
