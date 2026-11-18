@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identidad | UniMetas</title>
+
+  <!-- Tema guardado: va primero para evitar parpadeos -->
+  <script src="js/tema.js"></script>
+
+  <!-- Fuentes e iconos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Materialize y estilos propios (style.css siempre después) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="nav-unimetas" role="navigation" aria-label="Principal">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo">UniMetas</a>
+
+      <!-- Menú para pantallas medianas y grandes -->
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+        <li><a href="avances.html">Avances</a></li>
+        <li><a href="wireframes.html">Wireframes</a></li>
+        <li class="active"><a href="identidad.html" aria-current="page">Identidad</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#!" class="btn-tema" role="button"><i class="material-icons">dark_mode</i></a></li>
+      </ul>
+
+      <!-- Menú lateral para móviles (Sidenav) -->
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+        <li><a href="avances.html">Avances</a></li>
+        <li><a href="wireframes.html">Wireframes</a></li>
+        <li class="active"><a href="identidad.html" aria-current="page">Identidad</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#!" class="btn-tema" role="button"><i class="material-icons">dark_mode</i></a></li>
+      </ul>
+
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger" aria-label="Abrir menú"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <main class="pagina-contenido">
+    <header class="encabezado-pagina">
+      <div class="container center-align">
+        <h1 class="titulo-unimetas">Identidad visual</h1>
+        <h5 class="light texto-unimetas">Logo, slogan, paleta de colores y tipografía de UniMetas: qué usamos, para qué y por qué.</h5>
+      </div>
+    </header>
+
+    <div class="container">
+
+      <!-- ===== LOGO Y SLOGAN ===== -->
+      <section class="seccion-identidad" aria-labelledby="t-logo">
+        <h2 id="t-logo">Logo y slogan</h2>
+        <p class="intro">La marca combina el nombre de la aplicación con la imagen de una escalera: cada peldaño es un paso en la carrera.</p>
+
+        <div class="icon-block bloque-logo">
+          <img src="img/logoUnimetas.webp" alt="Logo de UniMetas: las letras UI junto a una escalera de cinco peldaños, con un trazo que sube hasta un punto rojo" class="responsive-img logo-unimetas">
+          <div class="texto-logo">
+            <p class="slogan-grande">"Cada paso cuenta, cada meta suma."</p>
+            <ul>
+              <li><strong>Peldaños:</strong> los semestres de la carrera.</li>
+              <li><strong>Trazo:</strong> el recorrido de cada estudiante.</li>
+              <li><strong>Punto rojo:</strong> la meta, en el rojo de Univalle.</li>
+              <li><strong>Uso en tema oscuro:</strong> el logo va sobre una placa clara, porque sus trazos son negros.</li>
+              <li><strong>Nombre en la barra:</strong> "UniMetas" en Bebas Neue.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PALETA ===== -->
+      <section class="seccion-identidad" aria-labelledby="t-paleta">
+        <h2 id="t-paleta">Paleta de colores</h2>
+        <p class="intro">Cinco colores base más el rojo de Univalle como acento. Pulsa "Copiar" para llevarte el código hexadecimal.</p>
+
+        <div class="paleta-grid">
+          <article class="color-card">
+            <div class="color-muestra sw-blush" aria-hidden="true"></div>
+            <div class="color-info">
+              <h3>Lavender Blush</h3>
+              <code>#F5E6E8</code>
+              <p class="rol">Fondo de página (tema claro) y texto (tema oscuro).</p>
+              <button type="button" class="btn-copiar" data-hex="#F5E6E8" aria-label="Copiar el código #F5E6E8 de Lavender Blush">Copiar</button>
+            </div>
+          </article>
+
+          <article class="color-card">
+            <div class="color-muestra sw-thistle" aria-hidden="true"></div>
+            <div class="color-info">
+              <h3>Thistle</h3>
+              <code>#D5C6E0</code>
+              <p class="rol">Tarjetas y superficies en tema claro; texto secundario en tema oscuro.</p>
+              <button type="button" class="btn-copiar" data-hex="#D5C6E0" aria-label="Copiar el código #D5C6E0 de Thistle">Copiar</button>
+            </div>
+          </article>
+
+          <article class="color-card">
+            <div class="color-muestra sw-lilac" aria-hidden="true"></div>
+            <div class="color-info">
+              <h3>Lilac Ash</h3>
+              <code>#AAA1C8</code>
+              <p class="rol">Tarjetas y superficies en tema oscuro.</p>
+              <button type="button" class="btn-copiar" data-hex="#AAA1C8" aria-label="Copiar el código #AAA1C8 de Lilac Ash">Copiar</button>
+            </div>
+          </article>
+
+          <article class="color-card">
+            <div class="color-muestra sw-mauve" aria-hidden="true"></div>
+            <div class="color-info">
+              <h3>Dusty Mauve</h3>
+              <code>#967AA1</code>
+              <p class="rol">Detalles decorativos: divisores y bordes. No se usa para texto sobre fondos claros.</p>
+              <button type="button" class="btn-copiar" data-hex="#967AA1" aria-label="Copiar el código #967AA1 de Dusty Mauve">Copiar</button>
+            </div>
+          </article>
+
+          <article class="color-card">
+            <div class="color-muestra sw-indigo" aria-hidden="true"></div>
+            <div class="color-info">
+              <h3>Space Indigo</h3>
+              <code>#192A51</code>
+              <p class="rol">Texto y títulos (tema claro), barra de navegación y footer.</p>
+              <button type="button" class="btn-copiar" data-hex="#192A51" aria-label="Copiar el código #192A51 de Space Indigo">Copiar</button>
+            </div>
+          </article>
+
+          <article class="color-card">
+            <div class="color-muestra sw-red" aria-hidden="true"></div>
+            <div class="color-info">
+              <h3>Rojo Univalle</h3>
+              <code>#C8102E</code>
+              <p class="rol">Acento: botones, filtros activos, barras de progreso y bordes superiores. Valor provisional, falta confirmar el rojo oficial.</p>
+              <button type="button" class="btn-copiar" data-hex="#C8102E" aria-label="Copiar el código #C8102E del Rojo Univalle">Copiar</button>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="titulo-unimetas subtitulo-identidad">Tonos derivados</h3>
+        <p class="intro">Variaciones del índigo y del rojo para cubrir el tema oscuro y los estados de interacción.</p>
+        <div class="paleta-grid">
+          <article class="color-card">
+            <div class="color-muestra sw-noche" aria-hidden="true"></div>
+            <div class="color-info">
+              <h3>Índigo noche</h3>
+              <code>#101A33</code>
+              <p class="rol">Fondo de página en tema oscuro.</p>
+              <button type="button" class="btn-copiar" data-hex="#101A33" aria-label="Copiar el código #101A33 de Índigo noche">Copiar</button>
+            </div>
+          </article>
+
+          <article class="color-card">
+            <div class="color-muestra sw-profundo" aria-hidden="true"></div>
+            <div class="color-info">
+              <h3>Índigo profundo</h3>
+              <code>#0A1226</code>
+              <p class="rol">Franja inferior del footer.</p>
+              <button type="button" class="btn-copiar" data-hex="#0A1226" aria-label="Copiar el código #0A1226 de Índigo profundo">Copiar</button>
+            </div>
+          </article>
+
+          <article class="color-card">
+            <div class="color-muestra sw-reddark" aria-hidden="true"></div>
+            <div class="color-info">
+              <h3>Rojo oscuro</h3>
+              <code>#9E0C24</code>
+              <p class="rol">Botón al pasar el cursor y avisos de error.</p>
+              <button type="button" class="btn-copiar" data-hex="#9E0C24" aria-label="Copiar el código #9E0C24 del Rojo oscuro">Copiar</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== ROLES POR TEMA ===== -->
+      <section class="seccion-identidad" aria-labelledby="t-roles">
+        <h2 id="t-roles">Roles de color en cada tema</h2>
+        <p class="intro">La interfaz no usa colores sueltos: cada elemento toma el color de su rol, y el rol cambia según el tema. El botón de la barra de navegación alterna entre claro y oscuro; por defecto se respeta el tema del dispositivo.</p>
+
+        <div class="tabla-wrap">
+          <table class="tabla-identidad">
+            <caption class="solo-lector">Color que usa cada rol en el tema claro y en el tema oscuro</caption>
+            <thead>
+              <tr><th scope="col">Rol</th><th scope="col">Tema claro</th><th scope="col">Tema oscuro</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Fondo de página</th><td><span class="chip-color sw-blush"></span>Lavender Blush</td><td><span class="chip-color sw-noche"></span>Índigo noche</td></tr>
+              <tr><th scope="row">Tarjetas</th><td><span class="chip-color sw-thistle"></span>Thistle</td><td><span class="chip-color sw-lilac"></span>Lilac Ash</td></tr>
+              <tr><th scope="row">Texto y títulos</th><td><span class="chip-color sw-indigo"></span>Space Indigo</td><td><span class="chip-color sw-blush"></span>Lavender Blush</td></tr>
+              <tr><th scope="row">Texto sobre tarjetas</th><td><span class="chip-color sw-indigo"></span>Space Indigo</td><td><span class="chip-color sw-indigo"></span>Space Indigo</td></tr>
+              <tr><th scope="row">Texto secundario</th><td><span class="chip-color sw-suave"></span>Índigo al 75 %</td><td><span class="chip-color sw-thistle"></span>Thistle</td></tr>
+              <tr><th scope="row">Navegación y footer</th><td><span class="chip-color sw-indigo"></span>Space Indigo</td><td><span class="chip-color sw-indigo"></span>Space Indigo</td></tr>
+              <tr><th scope="row">Acción y acento</th><td><span class="chip-color sw-red"></span>Rojo Univalle</td><td><span class="chip-color sw-red"></span>Rojo Univalle</td></tr>
+              <tr><th scope="row">Decoración</th><td><span class="chip-color sw-mauve"></span>Dusty Mauve</td><td><span class="chip-color sw-mauve"></span>Dusty Mauve</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== ACCESIBILIDAD ===== -->
+      <section class="seccion-identidad" aria-labelledby="t-contraste">
+        <h2 id="t-contraste">Accesibilidad: contraste</h2>
+        <p class="intro">Relación de contraste calculada con la fórmula de WCAG 2.1. El texto normal necesita 4.5:1 como mínimo (AA) y 7:1 para AAA; los iconos, bordes y texto grande necesitan 3:1.</p>
+
+        <div class="tabla-wrap">
+          <table class="tabla-identidad">
+            <caption class="solo-lector">Contraste de las combinaciones de color usadas en la interfaz</caption>
+            <thead>
+              <tr><th scope="col">Combinación</th><th scope="col">Muestra</th><th scope="col">Contraste</th><th scope="col">Nivel</th><th scope="col">Dónde se usa</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Índigo sobre Blush</th><td><span class="par-muestra par-indigo-sobre-blush">Aa</span></td><td>11.64:1</td><td><span class="nivel ok">AAA</span></td><td>Texto y títulos, tema claro</td></tr>
+              <tr><th scope="row">Índigo sobre Thistle</th><td><span class="par-muestra par-indigo-sobre-thistle">Aa</span></td><td>8.71:1</td><td><span class="nivel ok">AAA</span></td><td>Texto en tarjetas, tema claro</td></tr>
+              <tr><th scope="row">Índigo sobre Lilac Ash</th><td><span class="par-muestra par-indigo-sobre-lilac">Aa</span></td><td>5.79:1</td><td><span class="nivel ok">AA</span></td><td>Texto en tarjetas, tema oscuro</td></tr>
+              <tr><th scope="row">Blush sobre Índigo noche</th><td><span class="par-muestra par-blush-sobre-noche">Aa</span></td><td>14.26:1</td><td><span class="nivel ok">AAA</span></td><td>Texto y títulos, tema oscuro</td></tr>
+              <tr><th scope="row">Blush sobre Índigo</th><td><span class="par-muestra par-claro-sobre-indigo">Aa</span></td><td>11.64:1</td><td><span class="nivel ok">AAA</span></td><td>Encabezado de objetivos</td></tr>
+              <tr><th scope="row">Blanco sobre Rojo Univalle</th><td><span class="par-muestra par-blanco-sobre-rojo">Aa</span></td><td>5.88:1</td><td><span class="nivel ok">AA</span></td><td>Botones y filtro activo</td></tr>
+              <tr><th scope="row">Blanco sobre Rojo oscuro</th><td><span class="par-muestra par-blanco-sobre-rojo-oscuro">Aa</span></td><td>8.29:1</td><td><span class="nivel ok">AAA</span></td><td>Botón en hover y avisos de error</td></tr>
+              <tr><th scope="row">Rojo sobre Blush</th><td><span class="par-muestra par-rojo-sobre-blush">Aa</span></td><td>4.87:1</td><td><span class="nivel ok">AA</span></td><td>Permitido como texto sobre el fondo claro</td></tr>
+              <tr><th scope="row">Mauve sobre Blush</th><td><span class="par-muestra par-mauve-sobre-blush">Aa</span></td><td>3.10:1</td><td><span class="nivel limitado">Solo gráficos</span></td><td>Divisores y detalles, nunca texto</td></tr>
+              <tr><th scope="row">Rojo sobre Índigo</th><td><span class="par-muestra par-rojo-sobre-indigo">Aa</span></td><td>2.39:1</td><td><span class="nivel no">No usar</span></td><td>Solo como línea decorativa bajo la barra de navegación</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="texto-unimetas texto-pequeno">Además, el estado de cada avance no depende solo del color: se distingue por el relleno (completado), el trazo continuo (en proceso) o el trazo punteado (pendiente).</p>
+      </section>
+
+      <!-- ===== TIPOGRAFÍA ===== -->
+      <section class="seccion-identidad" aria-labelledby="t-tipo">
+        <h2 id="t-tipo">Tipografía</h2>
+        <p class="intro">Dos familias de Google Fonts: Bebas Neue para los títulos H1 y Urbanist para todo lo demás.</p>
+
+        <div class="fuentes-grid">
+          <article class="icon-block fuente-card">
+            <h3>Primaria · Bebas Neue</h3>
+            <p class="muestra-grande muestra-bebas" aria-hidden="true">Aa</p>
+            <p class="alfabeto muestra-bebas">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 0123456789</p>
+            <ul>
+              <li>Uso: solo títulos H1 y el nombre de marca.</li>
+              <li>Peso: Regular (400). Solo tiene mayúsculas.</li>
+            </ul>
+          </article>
+
+          <article class="icon-block fuente-card">
+            <h3>Secundaria · Urbanist</h3>
+            <p class="muestra-grande muestra-urbanist" aria-hidden="true">Aa</p>
+            <p class="alfabeto muestra-urbanist">Abcdefghijklmnñopqrstuvwxyz 0123456789</p>
+            <p class="pesos">
+              <span class="peso-300">Light</span>
+              <span class="peso-400">Regular</span>
+              <span class="peso-500">Medium</span>
+              <span class="peso-700">Bold</span>
+            </p>
+            <ul>
+              <li>Uso: subtítulos, cuerpo, botones, formularios y menús.</li>
+              <li>Pesos: 300 en textos de apoyo, 400 en cuerpo y 700 en subtítulos.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="tabla-wrap">
+          <table class="tabla-identidad">
+            <caption class="solo-lector">Escala tipográfica de UniMetas</caption>
+            <thead>
+              <tr><th scope="col">Elemento</th><th scope="col">Fuente</th><th scope="col">Tamaño</th><th scope="col">Peso</th><th scope="col">Muestra</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Título H1</th><td>Bebas Neue</td><td>56 px (40 px en móvil)</td><td>400</td><td><span class="escala-h1">UniMetas</span></td></tr>
+              <tr><th scope="row">Título H2</th><td>Urbanist</td><td>32 px</td><td>700</td><td><span class="escala-h2">Malla curricular</span></td></tr>
+              <tr><th scope="row">Título H3</th><td>Urbanist</td><td>24 px</td><td>700</td><td><span class="escala-h3">Mi semestre</span></td></tr>
+              <tr><th scope="row">Título H4 y H5</th><td>Urbanist</td><td>20 px</td><td>700</td><td><span class="escala-h4">Reseñas de profesores</span></td></tr>
+              <tr><th scope="row">Cuerpo</th><td>Urbanist</td><td>16 px</td><td>300 / 400</td><td><span class="escala-cuerpo">Consulta tu avance en la carrera.</span></td></tr>
+              <tr><th scope="row">Pequeño</th><td>Urbanist</td><td>14 px</td><td>400</td><td><span class="escala-pequeno">Sede principal · Salón 204</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== JUSTIFICACIÓN ===== -->
+      <section class="seccion-identidad" aria-labelledby="t-just">
+        <h2 id="t-just">Por qué estas decisiones</h2>
+        <p class="intro">Resumen de la justificación de tipografía y color.</p>
+
+        <div class="justificacion">
+          <article class="icon-block">
+            <h3>Bebas Neue en los H1</h3>
+            <p>Es condensada y de mucho impacto, ideal para titulares cortos que identifican cada pantalla. Como solo tiene mayúsculas y pierde legibilidad en tamaños pequeños, se limita a los títulos principales.</p>
+          </article>
+          <article class="icon-block">
+            <h3>Urbanist en el resto</h3>
+            <p>Es una sans-serif geométrica y limpia, con buena altura de x y una gama de pesos del 100 al 900. Se lee bien en pantallas pequeñas y permite crear jerarquía solo con el peso y el tamaño.</p>
+          </article>
+          <article class="icon-block">
+            <h3>Colores para estudiar</h3>
+            <p>Los tonos lavanda y lila dan calma y concentración; el índigo aporta seriedad académica y confianza. El rojo de Univalle ancla la identidad institucional y, al usarse solo como acento, se reconoce enseguida como "aquí se puede actuar".</p>
+          </article>
+          <article class="icon-block">
+            <h3>Accesibilidad primero</h3>
+            <p>Cada combinación de texto cumple al menos 4.5:1. Los colores que no llegan (Dusty Mauve sobre fondos claros, rojo sobre índigo) se reservan para decoración. Ambas fuentes son gratuitas y de licencia abierta.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== VISTA PREVIA ===== -->
+      <section class="seccion-identidad" aria-labelledby="t-prev">
+        <h2 id="t-prev">Vista previa en ambos temas</h2>
+        <p class="intro">Los mismos componentes con los roles de cada tema. Los estados son un ejemplo de cómo se verán las materias de la malla; los wireframes completos están en la sección <a href="wireframes.html">Wireframes</a>.</p>
+
+        <div class="previews">
+          <div class="preview-tema tema-claro">
+            <p class="etiqueta-tema">Tema claro</p>
+            <p class="preview-titulo">Mi semestre</p>
+            <div class="icon-block">
+              <h5>Estructuras de Datos</h5>
+              <span class="estado listo">Aprobada</span>
+              <span class="estado">Disponible</span>
+              <span class="estado pendiente">Bloqueada</span>
+              <p>Así se ve una tarjeta con su texto, sus estados y la barra de progreso.</p>
+              <div class="progress" role="progressbar" aria-label="Avance de la carrera: 40 %" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><div class="determinate" style="width: 40%"></div></div>
+            </div>
+            <a class="btn waves-effect waves-light btn-unimetas" href="#!">Ver material</a>
+          </div>
+
+          <div class="preview-tema tema-oscuro">
+            <p class="etiqueta-tema">Tema oscuro</p>
+            <p class="preview-titulo">Mi semestre</p>
+            <div class="icon-block">
+              <h5>Estructuras de Datos</h5>
+              <span class="estado listo">Aprobada</span>
+              <span class="estado">Disponible</span>
+              <span class="estado pendiente">Bloqueada</span>
+              <p>Así se ve una tarjeta con su texto, sus estados y la barra de progreso.</p>
+              <div class="progress" role="progressbar" aria-label="Avance de la carrera: 40 %" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><div class="determinate" style="width: 40%"></div></div>
+            </div>
+            <a class="btn waves-effect waves-light btn-unimetas" href="#!">Ver material</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="page-footer footer-unimetas">
+    <div class="container">
+      <div class="row">
+
+        <div class="col l6 s12">
+          <h5 class="white-text">UniMetas</h5>
+          <p class="grey-text text-lighten-4">
+            Proyecto desarrollado por estudiantes de la Universidad del Valle Sede Tuluá,
+            para centralizar el material de estudio, la malla curricular y las reseñas de profesores.
+          </p>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Integrantes</h5>
+          <ul>
+            <li class="white-text">Paula Jimena Bohórquez B.</li>
+            <li class="white-text">Manuela Delgado A.</li>
+            <li class="white-text">Juan Camilo Gil A.</li>
+            <li class="white-text">Juan Manuel Mejía H.</li>
+          </ul>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Contacto</h5>
+          <ul>
+            <li><a class="white-text" href="mailto:unimetas@correounivalle.edu.co">unimetas@correounivalle.edu.co</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        © 2026 UniMetas · Universidad del Valle, Sede Tuluá
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

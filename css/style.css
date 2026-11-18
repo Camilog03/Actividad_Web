@@ -1,165 +1,219 @@
+/* ==========================================================================
+   UniMetas · hoja de estilos
+   Orden:
+     1. Paleta base y tokens de color (tema claro / oscuro)
+     2. Tipografía
+     3. Base y accesibilidad
+     4. Componentes compartidos (nav, footer, botones, tarjetas, avisos)
+     5. Páginas: inicio, nosotros, objetivos, avances, wireframes, contacto
+     6. Página de identidad visual
+     7. Responsive
+   Regla: ningún color suelto en los componentes, todo sale de las variables.
+   ========================================================================== */
 
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-	font-size: inherit;
-}
 
-.icon-block {
-  width: 100%;
-}
+/* ==========================================================================
+   1. PALETA Y TOKENS DE COLOR
+   ========================================================================== */
 
-/* ============================================
-   PALETA BASE 
-   ============================================ */
+/* Paleta base (no cambia con el tema) */
 :root {
   --lavender-blush: #F5E6E8;
-  --thistle: #D5C6E0;
-  --lilac-ash: #AAA1C8;
-  --dusty-mauve: #967AA1;
-  --space-indigo: #192A51;
+  --thistle:        #D5C6E0;
+  --lilac-ash:      #AAA1C8;
+  --dusty-mauve:    #967AA1;
+  --space-indigo:   #192A51;
 
-  /* Rojo de acento (cámbialo por el rojo oficial de Univalle si lo tienes) */
-  --univalle-red: #C8102E;
+  /* Acento institucional (provisional: reemplazar por el rojo oficial de Univalle) */
+  --univalle-red:      #C8102E;
   --univalle-red-dark: #9E0C24;
 
-  /* Roles de color: TEMA CLARO (por defecto) */
-  --fondo: var(--lavender-blush);
-  --texto: var(--space-indigo);
-  --texto-suave: var(--dusty-mauve);
-  --titulo: var(--space-indigo);
-  --nav-fondo: var(--space-indigo);
-  --tarjeta-fondo: var(--thistle);
-  --tarjeta-texto: var(--space-indigo);
-  --boton-fondo: var(--univalle-red);
-  --boton-hover: var(--univalle-red-dark);
-  --icono: var(--dusty-mauve);
-  --footer-fondo: var(--dusty-mauve);
-  --footer-franja: var(--space-indigo);
-  --footer-franja-texto: var(--thistle);
-  --logo-fondo: transparent;
+  /* Tonos derivados del índigo */
+  --indigo-noche:     #101A33;  /* fondo del tema oscuro */
+  --indigo-noche-alt: #1F3366;  /* fondo alterno del tema oscuro */
+  --indigo-profundo:  #0A1226;  /* franja inferior del footer */
 }
 
-/* ============================================
-   TEMA OSCURO (se activa solo si el dispositivo
-   del usuario está en modo oscuro)
-   ============================================ */
+/* Roles de color: TEMA CLARO (por defecto) */
+:root,
+.tema-claro {
+  --fondo:           var(--lavender-blush);
+  --fondo-alterno:   var(--thistle);
+  --texto:           var(--space-indigo);
+  /* indigo mezclado con el fondo: mantiene contraste AA (el mauve sobre blush solo da 3.1:1) */
+  --texto-suave:     #505977;
+  --texto-suave:     color-mix(in srgb, var(--space-indigo) 75%, var(--lavender-blush));
+  --titulo:          var(--space-indigo);
+  --nav-fondo:       var(--space-indigo);
+  --nav-texto:       #fff;
+  --tarjeta-fondo:   var(--thistle);
+  --tarjeta-texto:   var(--space-indigo);
+  --boton-fondo:     var(--univalle-red);
+  --boton-hover:     var(--univalle-red-dark);
+  --boton-texto:     #fff;
+  --icono:           var(--space-indigo);
+  --foco:            var(--space-indigo);
+  --footer-fondo:    var(--space-indigo);
+  --footer-franja:   var(--indigo-profundo);
+  --footer-texto:    var(--lavender-blush);
+  --logo-fondo:      transparent;
+}
+
+/* Roles de color: TEMA OSCURO.
+   Se activa con el tema del dispositivo o con el botón de tema (data-theme). */
+:root[data-theme="dark"],
+.tema-oscuro {
+  --fondo:           var(--indigo-noche);
+  --fondo-alterno:   var(--indigo-noche-alt);
+  --texto:           var(--lavender-blush);
+  --texto-suave:     var(--thistle);
+  --titulo:          var(--lavender-blush);
+  --nav-fondo:       var(--space-indigo);
+  --tarjeta-fondo:   var(--lilac-ash);
+  --tarjeta-texto:   var(--space-indigo);
+  --icono:           var(--space-indigo);
+  --foco:            var(--lavender-blush);
+  --logo-fondo:      var(--lavender-blush); /* placa clara: el logo es negro */
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
-    --fondo: #101a33;
-    --texto: var(--lavender-blush);
-    --texto-suave: var(--thistle);
-    --titulo: var(--lavender-blush);
-    --nav-fondo: var(--space-indigo);
-    --tarjeta-fondo: var(--lilac-ash);
-    --tarjeta-texto: var(--space-indigo);
-    --boton-fondo: var(--univalle-red);
-    --boton-hover: var(--univalle-red-dark);
-    --icono: var(--space-indigo);
-    --footer-fondo: var(--space-indigo);
-    --footer-franja: #0a1226;
-    --footer-franja-texto: var(--thistle);
-    --logo-fondo: var(--lavender-blush);  /* placa clara para que el logo negro se vea */
+  :root:not([data-theme="light"]) {
+    --fondo:           var(--indigo-noche);
+    --fondo-alterno:   var(--indigo-noche-alt);
+    --texto:           var(--lavender-blush);
+    --texto-suave:     var(--thistle);
+    --titulo:          var(--lavender-blush);
+    --nav-fondo:       var(--space-indigo);
+    --tarjeta-fondo:   var(--lilac-ash);
+    --tarjeta-texto:   var(--space-indigo);
+    --icono:           var(--space-indigo);
+    --foco:            var(--lavender-blush);
+    --logo-fondo:      var(--lavender-blush);
   }
 }
 
-/* ============================================
-   ESTILOS 
-   ============================================ */
+
+/* ==========================================================================
+   2. TIPOGRAFÍA
+   Bebas Neue: solo H1 y el nombre de marca. Urbanist: todo lo demás.
+   Escala: H1 56 · H2 32 · H3 24 · H4/H5 20 · cuerpo 16 · pequeño 14
+   ========================================================================== */
+:root {
+  --fuente-titulo: "Bebas Neue", Impact, sans-serif;
+  --fuente-base:   "Urbanist", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --fs-h1: 3.5rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.5rem;
+  --fs-h4: 1.25rem;
+  --fs-cuerpo: 1rem;
+  --fs-pequeno: .875rem;
+}
+
+html { font-size: 16px; } /* Materialize usa 14-15px; el cuerpo de la escala es 16px */
+
 body {
+  font-family: var(--fuente-base);
+  font-size: var(--fs-cuerpo);
   background-color: var(--fondo);
   color: var(--texto);
 }
 
+button, input, textarea, select, label { font-family: var(--fuente-base); }
+
+h1 {
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  font-size: var(--fs-h1);
+  line-height: 1.1;
+  letter-spacing: .02em;
+}
+h2, h3, h4, h5, h6 {
+  font-family: var(--fuente-base);
+  font-weight: 700;
+  line-height: 1.25;
+}
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4, h5 { font-size: var(--fs-h4); }
+h6 { font-size: var(--fs-cuerpo); }
+small, .texto-pequeno { font-size: var(--fs-pequeno); }
+strong, b { font-weight: 700; }
+
+/* Utilidades de fuente */
+.bebas-neue-regular { font-family: var(--fuente-titulo); font-weight: 400; font-style: normal; }
+.urbanist-regular   { font-family: var(--fuente-base); font-optical-sizing: auto; font-weight: 400; font-style: normal; }
+
+/* Marca en la barra de navegación */
+.brand-logo { font-family: var(--fuente-titulo); font-weight: 400; letter-spacing: .03em; }
+
+
+/* ==========================================================================
+   3. BASE Y ACCESIBILIDAD
+   ========================================================================== */
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 2px;
+}
+/* Sobre superficies con color propio, el foco usa el color de su texto */
+.icon-block :focus-visible,
+.card-general :focus-visible,
+.collapsible :focus-visible,
+.collection :focus-visible,
+.modal :focus-visible,
+.wf-card :focus-visible { outline-color: var(--tarjeta-texto); }
+.nav-unimetas :focus-visible,
+.footer-unimetas :focus-visible { outline-color: var(--lavender-blush); }
+
+/* Materialize pinta de verde azulado cualquier botón enfocado */
+.btn-detalle:focus, .btn-tema:focus { background-color: transparent; }
+
+/* Enlaces dentro del contenido: el azul por defecto de Materialize no tiene contraste en la paleta */
+.pagina-contenido a:not(.btn):not(.btn-flat) {
+  color: var(--texto);
+  font-weight: 700;
+  text-decoration: underline;
+}
+.icon-block a:not(.btn) { color: var(--tarjeta-texto); }
+
+.titulo-unimetas { color: var(--titulo); }
+.texto-unimetas  { color: var(--texto-suave); }
+.slogan-unimetas { color: var(--texto); font-style: italic; }
+.icono-unimetas  { color: var(--icono); }
+
+.pagina-contenido h4,
+.pagina-contenido h5 { color: var(--titulo); }
+.icon-block h5 { color: var(--tarjeta-texto); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+
+/* ==========================================================================
+   4. COMPONENTES COMPARTIDOS
+   ========================================================================== */
+
+/* --- Navegación --- */
 .nav-unimetas {
   background-color: var(--nav-fondo);
+  color: var(--nav-texto);
   border-bottom: 4px solid var(--univalle-red);
 }
+.nav-unimetas .btn-tema .material-icons { font-size: 1.5rem; }
+.sidenav { background-color: var(--fondo); }
+.sidenav li > a { color: var(--texto); font-weight: 600; }
+.sidenav li.active { background-color: var(--fondo-alterno); }
 
-.titulo-unimetas {
-  color: var(--titulo);
-}
-
-.texto-unimetas {
-  color: var(--texto-suave);
-}
-
+/* --- Botones --- */
 .btn-unimetas {
   background-color: var(--boton-fondo);
+  color: var(--boton-texto);
 }
 .btn-unimetas:hover,
-.btn-unimetas:focus {
-  background-color: var(--boton-hover);
-}
+.btn-unimetas:focus { background-color: var(--boton-hover); }
 
-.icono-unimetas {
-  color: var(--icono);
-}
-
-.footer-unimetas {
-  background-color: var(--footer-fondo);
-}
-.footer-unimetas .footer-copyright {
-  background-color: var(--footer-franja);
-  color: var(--footer-franja-texto);
-}
-
-
-/* ============================================
-   TIPOGRAFÍA
-   ============================================ */
-
-.bebas-neue-regular {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.urbanist-regular {
-  font-family: "Urbanist", sans-serif;
-   font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-h1, a, .titulo-unimetas, .titulo-seccion, .footer-unimetas, .footer-copyright { 
-  font-family: "Bebas Neue", 
-  sans-serif; 
-  font-weight: 400; 
-  font-style: normal;
-}
-
-h2, h3, h4, h5, h6, p, li, ul, ol, input, textarea, label, button {
-  font-family: "Urbanist", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-
-
-
-/* ============================================
-   LOGO
-   ============================================ */
-.logo-unimetas {
-  background-color: var(--logo-fondo);
-  border-radius: 16px;
-  padding: 16px;
-  max-width: 300px;
-  width: 100%;
-}
-
-/* Fila del logo: menos espacio arriba y abajo */
-.fila-logo {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-/* ============================================
-   TARJETAS
-   ============================================ */
+/* --- Tarjetas --- */
 .icon-block {
   background-color: var(--tarjeta-fondo);
   color: var(--tarjeta-texto);
@@ -168,33 +222,52 @@ h2, h3, h4, h5, h6, p, li, ul, ol, input, textarea, label, button {
   padding: 20px;
   width: 100%;
 }
+.icon-block .material-icons { font-size: inherit; }
 
-.row-tarjetas {
-  display: flex;
-  flex-wrap: wrap;
+/* Fila de tarjetas con la misma altura */
+.row-tarjetas { display: flex; flex-wrap: wrap; }
+.row-tarjetas::after { display: none; }
+.row-tarjetas .col { display: flex; }
+
+/* --- Footer --- */
+.footer-unimetas { background-color: var(--footer-fondo); color: var(--footer-texto); }
+.footer-unimetas .footer-copyright {
+  background-color: var(--footer-franja);
+  color: var(--footer-texto);
 }
 
-.row-tarjetas::after {
-  display: none;
-}
+/* --- Modal y avisos --- */
+.modal { background-color: var(--tarjeta-fondo); color: var(--tarjeta-texto); border-radius: 12px; }
+.modal .modal-footer { background-color: var(--tarjeta-fondo); }
+.modal .modal-footer .btn-flat { color: var(--tarjeta-texto); font-weight: 700; }
+.toast-unimetas { background-color: var(--space-indigo); color: var(--lavender-blush); }
+.toast-error { background-color: var(--univalle-red-dark); color: #fff; }
+.material-tooltip { background-color: var(--space-indigo); color: var(--lavender-blush); }
 
-.row-tarjetas .col {
-  display: flex;
-}
-/* ============================================
-   PÁGINAS INTERNAS (nosotros, objetivos, avances, contacto)
-   Solo usan las variables de arriba: nada de colores sueltos
-   ============================================ */
+/* --- Encabezado de las páginas internas --- */
 .encabezado-pagina {
-  padding: 2.5rem 0 1rem;
+  padding: 2.5rem 0 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--dusty-mauve); /* divisor decorativo */
 }
-.encabezado-pagina h1 {
-  font-size: 2.6rem;
-  margin: 0 0 .5rem;
+.encabezado-pagina h1 { margin: 0 0 .5rem; }
+
+
+/* ==========================================================================
+   5. PÁGINAS
+   ========================================================================== */
+
+/* --- Inicio --- */
+#index-banner h1 { font-size: 4.5rem; }
+/* img.logo-unimetas: Materialize fija img.responsive-img {max-width:100%} con más especificidad */
+img.logo-unimetas {
+  background-color: var(--logo-fondo);
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 300px;
+  width: 100%;
 }
-.pagina-contenido h4,
-.pagina-contenido h5 { color: var(--titulo); }
-.icon-block h5 { color: var(--tarjeta-texto); }
+.fila-logo { margin-top: 0; margin-bottom: 10px; }
 
 /* --- Nosotros --- */
 .foto-integrante {
@@ -206,35 +279,6 @@ h2, h3, h4, h5, h6, p, li, ul, ol, input, textarea, label, button {
   display: block;
 }
 
-/* --- Wireframes: galería tipo Drive --- */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
-}
-
-.wf-card {
-  margin: 0;
-  background-color: var(--tarjeta-fondo);
-  color: var(--tarjeta-texto);
-  border-radius: 12px;
-  border-top: 4px solid var(--univalle-red);
-  overflow: hidden;
-}
-
-.wf-card img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  display: block;
-}
-
-.wf-card figcaption {
-  padding: .75rem 1rem;
-  font-weight: 700;
-}
-
-
 /* --- Objetivos --- */
 .hero-objetivos {
   background-color: var(--nav-fondo);
@@ -243,8 +287,8 @@ h2, h3, h4, h5, h6, p, li, ul, ol, input, textarea, label, button {
   padding: 2.5rem 0 2rem;
   margin-bottom: 1.5rem;
 }
-.hero-objetivos h1 { font-size: 2.6rem; margin: 0 0 .5rem; }
-.titulo-seccion { font-size: 1.9rem; margin: 1.5rem 0 1rem; }
+.hero-objetivos h1 { margin: 0 0 .5rem; }
+.titulo-seccion { margin: 1.5rem 0 1rem; }
 .card-general {
   background-color: var(--tarjeta-fondo);
   color: var(--tarjeta-texto);
@@ -266,7 +310,7 @@ h2, h3, h4, h5, h6, p, li, ul, ol, input, textarea, label, button {
 .collapsible-header {
   background-color: var(--tarjeta-fondo);
   color: var(--tarjeta-texto);
-  font-weight: 500;
+  font-weight: 600;
 }
 .collapsible-body {
   background-color: var(--tarjeta-fondo);
@@ -276,27 +320,18 @@ h2, h3, h4, h5, h6, p, li, ul, ol, input, textarea, label, button {
 .collapsible-header .material-icons { color: var(--icono); }
 
 /* --- Avances --- */
-.filtro {
-  color: var(--texto);
-  margin: 0 .35rem .75rem 0;
-}
-.filtro:hover { background-color: var(--tarjeta-fondo); }
-.btn-flat.filtro.activo {
-  background-color: var(--boton-fondo);
-  color: #fff;
-}
+.filtro { color: var(--texto); margin: 0 .35rem .75rem 0; }
+.filtro:hover { background-color: var(--tarjeta-fondo); color: var(--tarjeta-texto); }
+.btn-flat.filtro.activo { background-color: var(--boton-fondo); color: var(--boton-texto); }
 .avances-grid { display: flex; flex-wrap: wrap; }
 .avances-grid::after { display: none; }
-.avance-col { display: flex; margin-bottom: 1rem; margin-left: 0 !important; } /* Materialize centra con margin-left:auto y deja huecos al filtrar */
-.icon-block.avance {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+/* Materialize centra con margin-left:auto y deja huecos al filtrar */
+.avance-col { display: flex; margin-bottom: 1rem; margin-left: 0 !important; }
+.icon-block.avance { display: flex; flex-direction: column; justify-content: space-between; }
 .avance-cuerpo { flex: 1; }
 .estado {
   display: inline-block;
-  font-size: .8rem;
+  font-size: var(--fs-pequeno);
   font-weight: 700;
   padding: 2px 10px;
   border-radius: 12px;
@@ -304,8 +339,8 @@ h2, h3, h4, h5, h6, p, li, ul, ol, input, textarea, label, button {
   border: 2px solid var(--tarjeta-texto);
   color: var(--tarjeta-texto);
 }
+/* El estado no depende solo del color: relleno, trazo sólido o trazo punteado */
 .estado.listo { background-color: var(--tarjeta-texto); color: var(--tarjeta-fondo); }
-.estado.proceso { border-style: solid; }
 .estado.pendiente { border-style: dashed; }
 .progress { background-color: var(--lavender-blush); }
 .progress .determinate { background-color: var(--univalle-red); }
@@ -320,14 +355,10 @@ h2, h3, h4, h5, h6, p, li, ul, ol, input, textarea, label, button {
   cursor: pointer;
   color: var(--tarjeta-texto);
   text-decoration: underline;
-  font-size: 1rem;
+  font-size: var(--fs-cuerpo);
 }
-body.fondo-alterno { background-color: var(--thistle); }
-.collection {
-  border: none;
-  border-radius: 12px;
-  overflow: hidden;
-}
+body.fondo-alterno { background-color: var(--fondo-alterno); }
+.collection { border: none; border-radius: 12px; overflow: hidden; }
 .collection .collection-item {
   background-color: var(--tarjeta-fondo);
   color: var(--tarjeta-texto);
@@ -335,6 +366,52 @@ body.fondo-alterno { background-color: var(--thistle); }
 }
 .collection .collection-item.avatar i.circle { background-color: var(--univalle-red); color: #fff; }
 .collection .collection-item.avatar .title { font-weight: 700; }
+
+/* --- Wireframes: galería tipo Drive --- */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.wf-card {
+  margin: 0;
+  background-color: var(--tarjeta-fondo);
+  color: var(--tarjeta-texto);
+  border-radius: 12px;
+  border-top: 4px solid var(--univalle-red);
+  overflow: hidden;
+}
+.wf-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.wf-abrir {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+/* Visor de wireframes (modal) */
+.modal.modal-wireframe {
+  width: 94%;
+  max-width: 1100px;
+  max-height: 94%;
+  display: flex;
+  flex-direction: column;
+}
+.modal-wireframe .modal-content { flex: 1; overflow-y: auto; padding: 1rem 1.5rem; }
+.modal-wireframe .wf-titulo { margin: 0 0 .75rem; }
+.wf-visor { text-align: center; }
+.wf-visor img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.modal-wireframe .modal-footer { height: auto; padding: .5rem 1rem; text-align: center; }
+.modal-wireframe .modal-footer .btn-flat { float: none; margin: .25rem; }
+.wf-card figcaption { padding: .75rem 1rem; font-weight: 700; }
 
 /* --- Contacto --- */
 .input-field input,
@@ -349,8 +426,8 @@ body.fondo-alterno { background-color: var(--thistle); }
 .input-field input:focus + label,
 .input-field textarea:focus + label,
 .input-field .prefix.active { color: var(--tarjeta-texto) !important; opacity: 1; }
+/* El rojo no va como texto sobre fondos de color: el error se marca con una barra roja */
 .error-msg {
-  /* el rojo no va como texto sobre fondos oscuros: se marca con una barra roja */
   font-size: .85rem;
   min-height: 1rem;
   margin: -.5rem 0 .75rem;
@@ -361,18 +438,184 @@ body.fondo-alterno { background-color: var(--thistle); }
 .lista-contacto li { display: flex; align-items: center; margin-bottom: 1rem; }
 .lista-contacto .material-icons { margin-right: .75rem; color: var(--icono); }
 
-/* Modal y avisos */
-.modal { background-color: var(--tarjeta-fondo); color: var(--tarjeta-texto); border-radius: 12px; }
-.modal .modal-footer { background-color: var(--tarjeta-fondo); }
-.modal .modal-footer .btn-flat { color: var(--tarjeta-texto); font-weight: 700; }
-.toast-unimetas { background-color: var(--nav-fondo); color: var(--lavender-blush); }
-.toast-error { background-color: var(--univalle-red-dark); color: #fff; }
-.material-tooltip { background-color: var(--nav-fondo); color: var(--lavender-blush); }
 
+/* ==========================================================================
+   6. IDENTIDAD VISUAL (identidad.html)
+   ========================================================================== */
+.seccion-identidad { margin-bottom: 3rem; }
+.seccion-identidad > h2 { color: var(--titulo); margin: 0 0 .5rem; }
+.seccion-identidad > .intro { color: var(--texto-suave); margin: 0 0 1.5rem; max-width: 70ch; }
+
+/* Logo y slogan */
+.bloque-logo { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
+.bloque-logo .logo-unimetas { margin: 0; flex: 0 0 auto; }
+.bloque-logo .texto-logo { flex: 1 1 280px; }
+.slogan-grande { font-size: var(--fs-h3); font-weight: 700; font-style: italic; margin: 0 0 .75rem; }
+
+/* Paleta */
+.paleta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.color-card {
+  background-color: var(--tarjeta-fondo);
+  color: var(--tarjeta-texto);
+  border-radius: 12px;
+  border-top: 4px solid var(--univalle-red);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.color-muestra {
+  height: 110px;
+  /* borde para que el color claro se distinga de su fondo */
+  box-shadow: inset 0 -1px 0 rgba(25, 42, 81, .25);
+}
+.color-info { padding: 1rem; flex: 1; display: flex; flex-direction: column; gap: .25rem; }
+.color-info h3 { font-size: var(--fs-h4); margin: 0; }
+.color-info .rol { font-size: var(--fs-pequeno); margin: 0; }
+.btn-copiar {
+  align-self: flex-start;
+  margin-top: .5rem;
+  background: none;
+  border: 2px solid var(--tarjeta-texto);
+  border-radius: 8px;
+  padding: .25rem .75rem;
+  font-weight: 700;
+  font-size: var(--fs-pequeno);
+  color: var(--tarjeta-texto);
+  cursor: pointer;
+}
+.btn-copiar:hover { background-color: var(--tarjeta-texto); color: var(--tarjeta-fondo); }
+.btn-copiar:focus { background-color: transparent; }
+.btn-copiar:focus:hover { background-color: var(--tarjeta-texto); }
+.sw-blush   { background-color: var(--lavender-blush); }
+.sw-thistle { background-color: var(--thistle); }
+.sw-lilac   { background-color: var(--lilac-ash); }
+.sw-mauve   { background-color: var(--dusty-mauve); }
+.sw-indigo  { background-color: var(--space-indigo); }
+.sw-red     { background-color: var(--univalle-red); }
+.sw-noche   { background-color: var(--indigo-noche); }
+.sw-reddark { background-color: var(--univalle-red-dark); }
+.sw-profundo { background-color: var(--indigo-profundo); }
+.sw-suave   { background-color: #505977; }
+.chip-color {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: .5rem;
+  border-radius: 4px;
+  vertical-align: -2px;
+  border: 1px solid rgba(25, 42, 81, .5);
+}
+.subtitulo-identidad { margin-top: 2rem; }
+.solo-lector { position: absolute; left: -9999px; }
+
+/* Tablas de identidad (roles, contraste, escala tipográfica) */
+.tabla-wrap { overflow-x: auto; border-radius: 12px; }
+.tabla-identidad {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  background-color: var(--tarjeta-fondo);
+  color: var(--tarjeta-texto);
+  border-top: 4px solid var(--univalle-red);
+}
+.tabla-identidad th,
+.tabla-identidad td {
+  text-align: left;
+  padding: .75rem 1rem;
+  border-bottom: 1px solid var(--fondo);
+  vertical-align: middle;
+}
+.tabla-identidad thead th { font-weight: 700; font-size: var(--fs-pequeno); text-transform: uppercase; letter-spacing: .05em; }
+.tabla-identidad tbody th { font-weight: 700; }
+.tabla-identidad tr:last-child th,
+.tabla-identidad tr:last-child td { border-bottom: none; }
+.tabla-identidad code { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: var(--fs-pequeno); }
+.par-muestra {
+  display: inline-block;
+  min-width: 5.5rem;
+  text-align: center;
+  padding: .25rem .75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  border: 1px solid rgba(25, 42, 81, .35);
+}
+.par-claro-sobre-indigo { background-color: var(--space-indigo); color: var(--lavender-blush); }
+.par-indigo-sobre-blush { background-color: var(--lavender-blush); color: var(--space-indigo); }
+.par-indigo-sobre-thistle { background-color: var(--thistle); color: var(--space-indigo); }
+.par-indigo-sobre-lilac { background-color: var(--lilac-ash); color: var(--space-indigo); }
+.par-blanco-sobre-rojo { background-color: var(--univalle-red); color: #fff; }
+.par-blanco-sobre-rojo-oscuro { background-color: var(--univalle-red-dark); color: #fff; }
+.par-rojo-sobre-blush { background-color: var(--lavender-blush); color: var(--univalle-red); }
+.par-mauve-sobre-blush { background-color: var(--lavender-blush); color: var(--dusty-mauve); }
+.par-rojo-sobre-indigo { background-color: var(--space-indigo); color: var(--univalle-red); }
+.par-blush-sobre-noche { background-color: var(--indigo-noche); color: var(--lavender-blush); }
+.nivel {
+  display: inline-block;
+  font-size: var(--fs-pequeno);
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 12px;
+  border: 2px solid var(--tarjeta-texto);
+}
+.nivel.ok { background-color: var(--tarjeta-texto); color: var(--tarjeta-fondo); }
+.nivel.limitado { border-style: dashed; }
+.nivel.no { border-style: dotted; text-decoration: line-through; }
+
+/* Tipografía */
+.fuentes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.fuente-card .muestra-grande { font-size: 6rem; line-height: 1; margin: .5rem 0 1rem; color: var(--tarjeta-texto); }
+.fuente-card .alfabeto { font-size: var(--fs-h4); margin: 0 0 .75rem; overflow-wrap: anywhere; }
+.fuente-card ul { margin: 0; padding-left: 1.25rem; list-style: disc; }
+.fuente-card .pesos span { display: inline-block; margin-right: .75rem; font-size: var(--fs-h4); }
+.peso-300 { font-weight: 300; }
+.peso-400 { font-weight: 400; }
+.peso-500 { font-weight: 500; }
+.peso-700 { font-weight: 700; }
+.muestra-bebas   { font-family: var(--fuente-titulo); font-weight: 400; }
+.muestra-urbanist { font-family: var(--fuente-base); font-weight: 700; }
+.escala-h1 { font-family: var(--fuente-titulo); font-weight: 400; font-size: var(--fs-h1); line-height: 1.1; }
+.escala-h2 { font-weight: 700; font-size: var(--fs-h2); }
+.escala-h3 { font-weight: 700; font-size: var(--fs-h3); }
+.escala-h4 { font-weight: 700; font-size: var(--fs-h4); }
+.escala-cuerpo { font-size: var(--fs-cuerpo); }
+.escala-pequeno { font-size: var(--fs-pequeno); }
+
+/* Justificaciones */
+.justificacion { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 1rem; }
+.justificacion .icon-block { margin: 0; }
+.justificacion h3 { font-size: var(--fs-h4); margin-top: 0; color: var(--tarjeta-texto); }
+.justificacion p { margin: 0; }
+
+/* Vista previa de componentes en cada tema */
+.previews { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+.preview-tema {
+  background-color: var(--fondo);
+  color: var(--texto);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 2px solid var(--space-indigo);
+}
+.preview-tema .etiqueta-tema { font-size: var(--fs-pequeno); font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 .5rem; color: var(--texto-suave); }
+.preview-tema .preview-titulo { color: var(--titulo); margin: 0 0 .5rem; font-size: var(--fs-h1); font-family: var(--fuente-titulo); font-weight: 400; line-height: 1.1; }
+.preview-tema .icon-block { margin: 1rem 0; }
+.preview-tema .icon-block h5 { margin: 0 0 .5rem; }
+.preview-tema .icon-block p { margin: 0 0 .75rem; }
+.preview-tema .estado { margin: 0 .5rem 0 0; }
+.preview-tema .btn { margin-top: .25rem; }
+
+
+/* ==========================================================================
+   7. RESPONSIVE
+   ========================================================================== */
 @media (max-width: 600px) {
+  :root { --fs-h1: 2.5rem; }
+  #index-banner h1 { font-size: 3rem; }
+  .row-tarjetas .col { margin-bottom: 1rem; }
   #btn-color { float: none !important; display: block; width: 100%; margin-top: .5rem; }
   .avance-col { display: block; }
-  .encabezado-pagina h1,
-  .hero-objetivos h1 { font-size: 2rem; }
+  .fuente-card .muestra-grande { font-size: 4.5rem; }
 }
-

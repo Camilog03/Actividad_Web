@@ -3,18 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Objetivos | Proyecto Integrador</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <title>Objetivos | UniMetas</title>
+
+  <!-- Tema guardado: va primero para evitar parpadeos -->
+  <script src="js/tema.js"></script>
+
+  <!-- Fuentes e iconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Materialize y estilos propios (style.css siempre después) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
   <!-- NAVBAR (componente 1) -->
-  <nav class="nav-unimetas" role="navigation">
+  <nav class="nav-unimetas" role="navigation" aria-label="Principal">
     <div class="nav-wrapper container">
       <a id="logo-container" href="index.html" class="brand-logo">UniMetas</a>
 
@@ -22,23 +29,27 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
-        <li class="active"><a href="objetivos.html">Objetivos</a></li>
+        <li class="active"><a href="objetivos.html" aria-current="page">Objetivos</a></li>
         <li><a href="avances.html">Avances</a></li>
-        <li><a hreft="wireframes.html">Wireframes</a></li>
+        <li><a href="wireframes.html">Wireframes</a></li>
+        <li><a href="identidad.html">Identidad</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#!" class="btn-tema" role="button"><i class="material-icons">dark_mode</i></a></li>
       </ul>
 
       <!-- Menú lateral para móviles (Sidenav) -->
       <ul id="nav-mobile" class="sidenav">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
-        <li class="active"><a href="objetivos.html">Objetivos</a></li>
+        <li class="active"><a href="objetivos.html" aria-current="page">Objetivos</a></li>
         <li><a href="avances.html">Avances</a></li>
-        <li><a hreft="wireframes.html">Wireframes</a></li>
+        <li><a href="wireframes.html">Wireframes</a></li>
+        <li><a href="identidad.html">Identidad</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#!" class="btn-tema" role="button"><i class="material-icons">dark_mode</i></a></li>
       </ul>
 
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger" aria-label="Abrir menú"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
@@ -109,22 +120,40 @@
   <footer class="page-footer footer-unimetas">
     <div class="container">
       <div class="row">
-        <div class="col s12 m6">
-          <h5>UniMetas</h5>
-          <p>Proyecto Integrador I · Ingeniería de Sistemas</p>
+
+        <div class="col l6 s12">
+          <h5 class="white-text">UniMetas</h5>
+          <p class="grey-text text-lighten-4">
+            Proyecto desarrollado por estudiantes de la Universidad del Valle Sede Tuluá,
+            para centralizar el material de estudio, la malla curricular y las reseñas de profesores.
+          </p>
         </div>
-        <div class="col s12 m6">
-          <h5>Grupo</h5>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Integrantes</h5>
           <ul>
-            <li>Paula Jimena Bohórquez B.</li>
-            <li>Manuela Delgado A.</li>
-            <li>Juan Camilo Gil A.</li>
-            <li>Juan Manuel Mejía H.</li>
+            <li class="white-text">Paula Jimena Bohórquez B.</li>
+            <li class="white-text">Manuela Delgado A.</li>
+            <li class="white-text">Juan Camilo Gil A.</li>
+            <li class="white-text">Juan Manuel Mejía H.</li>
           </ul>
         </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Contacto</h5>
+          <ul>
+            <li><a class="white-text" href="mailto:unimetas@correounivalle.edu.co">unimetas@correounivalle.edu.co</a></li>
+          </ul>
+        </div>
+
       </div>
     </div>
-    <div class="footer-copyright"><div class="container">© 2026 Universidad del Valle, Sede Tuluá</div></div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        © 2026 UniMetas · Universidad del Valle, Sede Tuluá
+      </div>
+    </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

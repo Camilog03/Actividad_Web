@@ -1,24 +1,60 @@
 // ===== main.js =====
 document.addEventListener("DOMContentLoaded", function () {
-  // Inicializar componentes de Materialize
+  // Componentes de Materialize presentes en todas las páginas
   M.Sidenav.init(document.querySelectorAll(".sidenav"));
   M.Modal.init(document.querySelectorAll(".modal"));
-  M.Collapsible.init(document.querySelectorAll(".collapsible"));
   M.Tooltip.init(document.querySelectorAll(".tooltipped"));
 
+  iniciarTema();
   iniciarObjetivos();
   iniciarAvances();
   iniciarContacto();
+  iniciarIdentidad();
+  iniciarWireframes();
 });
+
+/* ---------- TEMA CLARO / OSCURO ---------- */
+function temaActual() {
+  var forzado = document.documentElement.getAttribute("data-theme");
+  if (forzado) return forzado;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function iniciarTema() {
+  var botones = document.querySelectorAll(".btn-tema");
+
+  function pintarIconos() {
+    var oscuro = temaActual() === "dark";
+    botones.forEach(function (b) {
+      b.querySelector(".material-icons").textContent = oscuro ? "light_mode" : "dark_mode";
+      b.setAttribute("aria-label", oscuro ? "Cambiar a tema claro" : "Cambiar a tema oscuro");
+      b.setAttribute("title", oscuro ? "Tema claro" : "Tema oscuro");
+    });
+  }
+
+  botones.forEach(function (b) {
+    b.addEventListener("click", function (e) {
+      e.preventDefault();
+      var nuevo = temaActual() === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", nuevo);
+      try { localStorage.setItem("unimetas-tema", nuevo); } catch (err) { /* ignorar */ }
+      pintarIconos();
+    });
+  });
+
+  pintarIconos();
+}
 
 /* ---------- OBJETIVOS ---------- */
 function iniciarObjetivos() {
-  var boton = document.getElementById("btn-expandir");
   var lista = document.getElementById("lista-objetivos");
-  if (!boton || !lista) return;
+  if (!lista) return;
 
   // accordion:false permite tener varios objetivos abiertos a la vez
   var instancia = M.Collapsible.init(lista, { accordion: false });
+
+  var boton = document.getElementById("btn-expandir");
+  if (!boton) return;
   var items = lista.querySelectorAll(":scope > li");
   var todosAbiertos = false;
 
@@ -69,6 +105,7 @@ function iniciarAvances() {
   if (btnColor) {
     btnColor.addEventListener("click", function () {
       var activo = document.body.classList.toggle("fondo-alterno");
+      btnColor.setAttribute("aria-pressed", activo ? "true" : "false");
       M.toast({ html: activo ? "Fondo cambiado" : "Fondo restaurado", classes: "toast-unimetas" });
     });
   }
@@ -119,4 +156,64 @@ function marcar(campo, ok, texto) {
   campo.classList.toggle("valid", ok);
   error.textContent = ok ? "" : texto;
   return ok;
+}
+
+/* ---------- IDENTIDAD VISUAL ---------- */
+function iniciarIdentidad() {
+  // Copiar el código hexadecimal de cada color
+  document.querySelectorAll(".btn-copiar").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var hex = btn.dataset.hex;
+      var aviso = function () {
+        M.toast({ html: "Copiado " + hex, classes: "toast-unimetas" });
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(hex).then(aviso, function () {
+          M.toast({ html: "No se pudo copiar " + hex, classes: "toast-error" });
+        });
+      } else {
+        M.toast({ html: "Tu navegador no permite copiar: " + hex, classes: "toast-error" });
+      }
+    });
+  });
+}
+
+/* ---------- WIREFRAMES: visor de imagen completa ---------- */
+function iniciarWireframes() {
+  var modalEl = document.getElementById("modal-wireframe");
+  if (!modalEl) return;
+
+  var modal = M.Modal.getInstance(modalEl);
+  var tarjetas = Array.prototype.slice.call(document.querySelectorAll(".wf-card"));
+  var imagen = document.getElementById("wf-imagen");
+  var titulo = document.getElementById("wf-titulo");
+  var original = document.getElementById("wf-original");
+  var actual = 0;
+
+  function mostrar(i) {
+    actual = (i + tarjetas.length) % tarjetas.length; // da la vuelta en los extremos
+    var img = tarjetas[actual].querySelector("img");
+    var nombre = tarjetas[actual].querySelector("figcaption").textContent;
+    imagen.src = img.getAttribute("src");
+    imagen.alt = img.getAttribute("alt");
+    titulo.textContent = nombre;
+    original.href = img.getAttribute("src");
+  }
+
+  tarjetas.forEach(function (tarjeta, i) {
+    tarjeta.querySelector(".wf-abrir").addEventListener("click", function () {
+      mostrar(i);
+      modal.open();
+    });
+  });
+
+  document.getElementById("wf-anterior").addEventListener("click", function () { mostrar(actual - 1); });
+  document.getElementById("wf-siguiente").addEventListener("click", function () { mostrar(actual + 1); });
+
+  // Flechas del teclado mientras el visor está abierto (Esc lo cierra Materialize)
+  document.addEventListener("keydown", function (e) {
+    if (!modal.isOpen) return;
+    if (e.key === "ArrowLeft") mostrar(actual - 1);
+    if (e.key === "ArrowRight") mostrar(actual + 1);
+  });
 }

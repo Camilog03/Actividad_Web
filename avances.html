@@ -4,16 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Avances | UniMetas</title>
+
+  <!-- Tema guardado: va primero para evitar parpadeos -->
+  <script src="js/tema.js"></script>
+
+  <!-- Fuentes e iconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Materialize y estilos propios (style.css siempre después) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
-  <nav class="nav-unimetas" role="navigation">
+  <nav class="nav-unimetas" role="navigation" aria-label="Principal">
     <div class="nav-wrapper container">
       <a id="logo-container" href="index.html" class="brand-logo">UniMetas</a>
 
@@ -22,8 +29,11 @@
         <li><a href="index.html">Inicio</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
         <li><a href="objetivos.html">Objetivos</a></li>
-        <li class="active"><a href="avances.html">Avances</a></li>
+        <li class="active"><a href="avances.html" aria-current="page">Avances</a></li>
+        <li><a href="wireframes.html">Wireframes</a></li>
+        <li><a href="identidad.html">Identidad</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#!" class="btn-tema" role="button"><i class="material-icons">dark_mode</i></a></li>
       </ul>
 
       <!-- Menú lateral para móviles (Sidenav) -->
@@ -31,11 +41,14 @@
         <li><a href="index.html">Inicio</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
         <li><a href="objetivos.html">Objetivos</a></li>
-        <li class="active"><a href="avances.html">Avances</a></li>
+        <li class="active"><a href="avances.html" aria-current="page">Avances</a></li>
+        <li><a href="wireframes.html">Wireframes</a></li>
+        <li><a href="identidad.html">Identidad</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#!" class="btn-tema" role="button"><i class="material-icons">dark_mode</i></a></li>
       </ul>
 
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger" aria-label="Abrir menú"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
@@ -56,6 +69,9 @@
           <button type="button" class="btn-flat filtro" data-estado="listo" aria-pressed="false">Completados</button>
           <button type="button" class="btn-flat filtro" data-estado="proceso" aria-pressed="false">En proceso</button>
           <button type="button" class="btn-flat filtro" data-estado="pendiente" aria-pressed="false">Pendientes</button>
+          <button type="button" id="btn-color" class="btn waves-effect waves-light btn-unimetas right" aria-pressed="false">
+            <i class="material-icons left">palette</i>Cambiar fondo
+          </button>
         </div>
       </div>
 

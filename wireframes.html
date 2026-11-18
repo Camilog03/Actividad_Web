@@ -4,148 +4,201 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wireframes | UniMetas</title>
+
+  <!-- Tema guardado: va primero para evitar parpadeos -->
+  <script src="js/tema.js"></script>
+
+  <!-- Fuentes e iconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Materialize y estilos propios (style.css siempre después) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="nav-unimetas" role="navigation">
-        <div class="nav-wrapper container">
-          <a id="logo-container" href="index.html" class="brand-logo">UniMetas</a>
-    
-          <!-- Menú para pantallas medianas y grandes -->
-          <ul class="right hide-on-med-and-down">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="objetivos.html">Objetivos</a></li>
-            <li><a href="avances.html">Avances</a></li>
-            <li class="active"><a hreft="wireframes.html">Wireframes</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-    
-          <!-- Menú lateral para móviles (Sidenav) -->
-          <ul id="nav-mobile" class="sidenav">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="objetivos.html">Objetivos</a></li>
-            <li><a href="avances.html">Avances</a></li>
-            <li class="active"><a hreft="wireframes.html">Wireframes</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-    
-          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        </div>
-      </nav>
+  <nav class="nav-unimetas" role="navigation" aria-label="Principal">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="index.html" class="brand-logo">UniMetas</a>
+
+      <!-- Menú para pantallas medianas y grandes -->
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+        <li><a href="avances.html">Avances</a></li>
+        <li class="active"><a href="wireframes.html" aria-current="page">Wireframes</a></li>
+        <li><a href="identidad.html">Identidad</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#!" class="btn-tema" role="button"><i class="material-icons">dark_mode</i></a></li>
+      </ul>
+
+      <!-- Menú lateral para móviles (Sidenav) -->
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="objetivos.html">Objetivos</a></li>
+        <li><a href="avances.html">Avances</a></li>
+        <li class="active"><a href="wireframes.html" aria-current="page">Wireframes</a></li>
+        <li><a href="identidad.html">Identidad</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#!" class="btn-tema" role="button"><i class="material-icons">dark_mode</i></a></li>
+      </ul>
+
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger" aria-label="Abrir menú"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
 
       <main class="pagina-contenido">
-        <header class="encabezado-pagina">
-            <div class="container center-align">
-                <h1 class="titulo-unimetas">Wireframes</h1>
-                <h5 class="light texto-unimetas">Wireframes de la aplicación UniMetas</h5>
-            </div>
-        </header>
-                
-        <div class="container">
-            <div class="galeria">
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w1.webp" alt="Wireframe 1">
-                    <figcaption>Wireframe 1</figcaption>
-                </figure>
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w2.webp" alt="Wireframe 2">
-                    <figcaption>Wireframe 2</figcaption>
-                </figure>
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w3.webp" alt="Wireframe 3">
-                    <figcaption>Wireframe 3</figcaption>
-                </figure>
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w4.webp" alt="Wireframe 4">
-                    <figcaption>Wireframe 4</figcaption>
-                </figure>
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w5.webp" alt="Wireframe 5">
-                    <figcaption>Wireframe 5</figcaption>
-                </figure>
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w6.webp" alt="Wireframe 6">
-                    <figcaption>Wireframe 6</figcaption>
-                </figure>
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w7.webp" alt="Wireframe 7">
-                    <figcaption>Wireframe 7</figcaption>
-                </figure>
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w8.webp" alt="Wireframe 8">
-                    <figcaption>Wireframe 8</figcaption>
-                </figure>
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w9.webp" alt="Wireframe 9">
-                    <figcaption>Wireframe 9</figcaption>
-                </figure>
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w10.webp" alt="Wireframe 10">
-                    <figcaption>Wireframe 10</figcaption>
-                </figure>
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w11.webp" alt="Wireframe 11">
-                    <figcaption>Wireframe 11</figcaption>
-                </figure>
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w12.webp" alt="Wireframe 12">
-                    <figcaption>Wireframe 12</figcaption>
-                </figure>
-                <figure class="wf-card">
-                    <img src="img/Wireframes/w13.webp" alt="Wireframe 13">
-                    <figcaption>Wireframe 13</figcaption>
-                </figure>
-            </div>
+    <header class="encabezado-pagina">
+      <div class="container center-align">
+        <h1 class="titulo-unimetas">Wireframes</h1>
+        <h5 class="light texto-unimetas">Wireframes de la aplicación UniMetas</h5>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="galeria">
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 1 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w1.webp" alt="Wireframe 1" loading="lazy">
+          </button>
+          <figcaption>Wireframe 1</figcaption>
+        </figure>
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 2 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w2.webp" alt="Wireframe 2" loading="lazy">
+          </button>
+          <figcaption>Wireframe 2</figcaption>
+        </figure>
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 3 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w3.webp" alt="Wireframe 3" loading="lazy">
+          </button>
+          <figcaption>Wireframe 3</figcaption>
+        </figure>
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 4 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w4.webp" alt="Wireframe 4" loading="lazy">
+          </button>
+          <figcaption>Wireframe 4</figcaption>
+        </figure>
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 5 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w5.webp" alt="Wireframe 5" loading="lazy">
+          </button>
+          <figcaption>Wireframe 5</figcaption>
+        </figure>
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 6 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w6.webp" alt="Wireframe 6" loading="lazy">
+          </button>
+          <figcaption>Wireframe 6</figcaption>
+        </figure>
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 7 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w7.webp" alt="Wireframe 7" loading="lazy">
+          </button>
+          <figcaption>Wireframe 7</figcaption>
+        </figure>
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 8 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w8.webp" alt="Wireframe 8" loading="lazy">
+          </button>
+          <figcaption>Wireframe 8</figcaption>
+        </figure>
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 9 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w9.webp" alt="Wireframe 9" loading="lazy">
+          </button>
+          <figcaption>Wireframe 9</figcaption>
+        </figure>
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 10 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w10.webp" alt="Wireframe 10" loading="lazy">
+          </button>
+          <figcaption>Wireframe 10</figcaption>
+        </figure>
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 11 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w11.webp" alt="Wireframe 11" loading="lazy">
+          </button>
+          <figcaption>Wireframe 11</figcaption>
+        </figure>
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 12 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w12.webp" alt="Wireframe 12" loading="lazy">
+          </button>
+          <figcaption>Wireframe 12</figcaption>
+        </figure>
+        <figure class="wf-card">
+          <button type="button" class="wf-abrir" aria-label="Ver el wireframe 13 completo" aria-haspopup="dialog">
+            <img src="img/Wireframes/w13.webp" alt="Wireframe 13" loading="lazy">
+          </button>
+          <figcaption>Wireframe 13</figcaption>
+        </figure>
+      </div>
+    </div>
+  </main>
+  <!-- Visor: muestra el wireframe completo -->
+  <div id="modal-wireframe" class="modal modal-wireframe" role="dialog" aria-modal="true" aria-labelledby="wf-titulo">
+    <div class="modal-content">
+      <h5 id="wf-titulo" class="wf-titulo"></h5>
+      <div class="wf-visor">
+        <img id="wf-imagen" src="" alt="">
+      </div>
+    </div>
+    <div class="modal-footer wf-controles">
+      <button type="button" class="btn-flat" id="wf-anterior"><i class="material-icons left">chevron_left</i>Anterior</button>
+      <a id="wf-original" class="btn-flat" href="#" target="_blank" rel="noopener">Abrir original</a>
+      <button type="button" class="btn-flat" id="wf-siguiente">Siguiente<i class="material-icons right">chevron_right</i></button>
+      <button type="button" class="btn-flat modal-close">Cerrar</button>
+    </div>
+  </div>
+
+  <footer class="page-footer footer-unimetas">
+    <div class="container">
+      <div class="row">
+
+        <div class="col l6 s12">
+          <h5 class="white-text">UniMetas</h5>
+          <p class="grey-text text-lighten-4">
+            Proyecto desarrollado por estudiantes de la Universidad del Valle Sede Tuluá,
+            para centralizar el material de estudio, la malla curricular y las reseñas de profesores.
+          </p>
         </div>
-      </main>
-      <footer class="page-footer footer-unimetas">
-        <div class="container">
-          <div class="row">
-    
-            <div class="col l6 s12">
-              <h5 class="white-text">UniMetas</h5>
-              <p class="grey-text text-lighten-4">
-                Proyecto desarrollado por estudiantes de la Universidad del Valle Sede Tuluá,
-                para centralizar el material de estudio, la malla curricular y las reseñas de profesores.
-              </p>
-            </div>
-    
-            <div class="col l3 s12">
-              <h5 class="white-text">Integrantes</h5>
-              <ul>
-                <li class="white-text">Paula Jimena Bohórquez B.</li>
-                <li class="white-text">Manuela Delgado A.</li>
-                <li class="white-text">Juan Camilo Gil A.</li>
-                <li class="white-text">Juan Manuel Mejía H.</li>
-              </ul>
-            </div>
-    
-            <div class="col l3 s12">
-              <h5 class="white-text">Contacto</h5>
-              <ul>
-                <li><a class="white-text" href="mailto:unimetas@correounivalle.edu.co">unimetas@correounivalle.edu.co</a></li>
-              </ul>
-            </div>
-    
-          </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Integrantes</h5>
+          <ul>
+            <li class="white-text">Paula Jimena Bohórquez B.</li>
+            <li class="white-text">Manuela Delgado A.</li>
+            <li class="white-text">Juan Camilo Gil A.</li>
+            <li class="white-text">Juan Manuel Mejía H.</li>
+          </ul>
         </div>
-    
-        <div class="footer-copyright">
-          <div class="container">
-            © 2026 UniMetas · Universidad del Valle, Sede Tuluá
-          </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">Contacto</h5>
+          <ul>
+            <li><a class="white-text" href="mailto:unimetas@correounivalle.edu.co">unimetas@correounivalle.edu.co</a></li>
+          </ul>
         </div>
-      </footer>
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-      <script src="js/main.js"></script>
+
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        © 2026 UniMetas · Universidad del Valle, Sede Tuluá
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 </html>
